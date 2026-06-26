@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vault Account — Premier Investor Vault</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <svg width="36" height="36" viewBox="0 0 56 56" fill="none">
+                    <rect x="4" y="4" width="48" height="48" rx="12" stroke="currentColor" stroke-width="2"/>
+                    <path d="M18 28h20M28 18v20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <span>PIV</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+                    Dashboard
+                </a>
+                <a href="investors.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Investor Directory
+                </a>
+                <a href="vault.html" class="nav-link active">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    Vault Account
+                </a>
+                <a href="ownership.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    Ownership Distribution
+                </a>
+                <a href="transactions.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    Transactions
+                </a>
+                <a href="blockchain.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="18" y1="10" x2="18" y2="14"/></svg>
+                    Blockchain Integration
+                </a>
+                <a href="401k.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    401K Investments
+                </a>
+                <a href="reports.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Reports
+                </a>
+                <a href="settings.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    Settings
+                </a>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="#" id="logoutBtn" class="nav-link logout">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    Logout
+                </a>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <h1>Vault Reserve Account</h1>
+                    <p>Primary Capital Reserve</p>
+                </div>
+                <div class="topbar-right">
+                    <div class="topbar-user">
+                        <div class="user-avatar" id="userAvatar">DG</div>
+                        <div class="user-info">
+                            <span class="user-name" id="userName">Investor</span>
+                            <span class="user-role" id="userRole">Member</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="page-content">
+                <div class="vault-hero">
+                    <div class="vault-balance-card">
+                        <div class="vault-label">Total Reserve Balance</div>
+                        <div class="vault-amount">$175,000,000.00</div>
+                        <div class="vault-currency">USD</div>
+                        <div class="vault-meta">
+                            <span class="vault-badge">Secured</span>
+                            <span class="vault-badge">Institutional Grade</span>
+                            <span class="vault-badge">Multi-Signature</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="vault-stats-row">
+                    <div class="vault-stat">
+                        <div class="vault-stat-label">Capital Reserve</div>
+                        <div class="vault-stat-value">$142,500,000.00</div>
+                    </div>
+                    <div class="vault-stat">
+                        <div class="vault-stat-label">Liquid Assets</div>
+                        <div class="vault-stat-value">$22,500,000.00</div>
+                    </div>
+                    <div class="vault-stat">
+                        <div class="vault-stat-label">Pending Deposits</div>
+                        <div class="vault-stat-value">$10,000,000.00</div>
+                    </div>
+                    <div class="vault-stat">
+                        <div class="vault-stat-label">Total Withdrawals</div>
+                        <div class="vault-stat-value">$47,200,000.00</div>
+                    </div>
+                </div>
+                <div class="vault-sections">
+                    <div class="vault-section">
+                        <div class="section-header">
+                            <h3>Transaction History</h3>
+                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                    <th>Type</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jun 24, 2026</td>
+                                    <td>Capital Reserve Allocation Q3</td>
+                                    <td>Reserve</td>
+                                    <td class="amount-positive">+$12,500,000.00</td>
+                                    <td><span class="tx-status completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 20, 2026</td>
+                                    <td>Quarterly Distribution — All Investors</td>
+                                    <td>Distribution</td>
+                                    <td class="amount-negative">-$3,200,000.00</td>
+                                    <td><span class="tx-status completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 18, 2026</td>
+                                    <td>Institutional Deposit — Wire Transfer</td>
+                                    <td>Deposit</td>
+                                    <td class="amount-positive">+$25,000,000.00</td>
+                                    <td><span class="tx-status pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 15, 2026</td>
+                                    <td>Operational Withdrawal — Escrow Release</td>
+                                    <td>Withdrawal</td>
+                                    <td class="amount-negative">-$1,800,000.00</td>
+                                    <td><span class="tx-status completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 12, 2026</td>
+                                    <td>Capital Reserve — Acquisition Fund</td>
+                                    <td>Reserve</td>
+                                    <td class="amount-positive">+$8,750,000.00</td>
+                                    <td><span class="tx-status completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 08, 2026</td>
+                                    <td>Investor Distribution — Donte Granison</td>
+                                    <td>Distribution</td>
+                                    <td class="amount-negative">-$630,000.00</td>
+                                    <td><span class="tx-status completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 05, 2026</td>
+                                    <td>Escrow Deposit — Third Party</td>
+                                    <td>Deposit</td>
+                                    <td class="amount-positive">+$15,000,000.00</td>
+                                    <td><span class="tx-status completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 01, 2026</td>
+                                    <td>Capital Reserve — Holding Account</td>
+                                    <td>Reserve</td>
+                                    <td class="amount-positive">+$5,000,000.00</td>
+                                    <td><span class="tx-status completed">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="vault-section">
+                        <div class="section-header">
+                            <h3>Deposit Records</h3>
+                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Source</th>
+                                    <th>Method</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jun 18, 2026</td>
+                                    <td>Institutional Wire</td>
+                                    <td>SWIFT</td>
+                                    <td class="amount-positive">$25,000,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 05, 2026</td>
+                                    <td>Escrow Agent</td>
+                                    <td>ACH</td>
+                                    <td class="amount-positive">$15,000,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td>May 28, 2026</td>
+                                    <td>Capital Partners LLC</td>
+                                    <td>Wire</td>
+                                    <td class="amount-positive">$10,000,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td>May 15, 2026</td>
+                                    <td>Private Equity Fund</td>
+                                    <td>SWIFT</td>
+                                    <td class="amount-positive">$20,000,000.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="vault-section">
+                        <div class="section-header">
+                            <h3>Withdrawal History</h3>
+                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Recipient</th>
+                                    <th>Purpose</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jun 20, 2026</td>
+                                    <td>All Investors (Pro Rata)</td>
+                                    <td>Quarterly Distribution</td>
+                                    <td class="amount-negative">$3,200,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 15, 2026</td>
+                                    <td>Escrow Holdings Inc.</td>
+                                    <td>Acquisition Release</td>
+                                    <td class="amount-negative">$1,800,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 08, 2026</td>
+                                    <td>Donte Granison</td>
+                                    <td>Investor Distribution</td>
+                                    <td class="amount-negative">$630,000.00</td>
+                                </tr>
+                                <tr>
+                                    <td>May 22, 2026</td>
+                                    <td>Carlos D. Stawarski</td>
+                                    <td>Operational Expense</td>
+                                    <td class="amount-negative">$450,000.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
