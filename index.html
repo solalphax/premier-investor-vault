@@ -1,32 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premier Investor Vault — Enterprise Wealth Management</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premier Investor Vault — Secure Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="landing-page">
-    <div class="landing-overlay">
-        <div class="landing-content">
-            <div class="landing-logo">
-                <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-                    <rect x="4" y="4" width="48" height="48" rx="12" stroke="#1a2744" stroke-width="2"/>
-                    <path d="M18 28h20M28 18v20" stroke="#1a2744" stroke-width="2.5" stroke-linecap="round"/>
-                    <circle cx="28" cy="28" r="8" stroke="#b8b8b8" stroke-width="1.5"/>
-                </svg>
-            </div>
-            <h1 class="landing-title">Premier Investor Vault</h1>
-            <p class="landing-subtitle">Private Wealth Management Portal</p>
-            <p class="landing-desc">Confidential $175,000,000 Investment Deal Management</p>
-            <a href="login.html" class="landing-btn">Secure Access</a>
-            <p class="landing-legal">Authorized Personnel Only. All access is monitored and logged.</p>
+<body>
+  <div class="login-page">
+    <!-- Left: Branding -->
+    <div class="login-branding">
+      <div class="brand-content">
+        <div class="brand-logo">PIV</div>
+        <h1 class="brand-title">Premier Investor Vault</h1>
+        <p class="brand-subtitle">Institutional Wealth Management Platform</p>
+        <div class="brand-stats">
+          <div class="brand-stat">
+            <div class="brand-stat-value">$175M</div>
+            <div class="brand-stat-label">AUM</div>
+          </div>
+          <div class="brand-stat">
+            <div class="brand-stat-value">13</div>
+            <div class="brand-stat-label">Investors</div>
+          </div>
+          <div class="brand-stat">
+            <div class="brand-stat-value">99.9%</div>
+            <div class="brand-stat-label">Uptime</div>
+          </div>
         </div>
-        <div class="landing-footer">
-            <span>PIV Enterprise Systems</span>
-            <span>v2.4.1</span>
-        </div>
+      </div>
     </div>
+
+    <!-- Right: Login Form -->
+    <div class="login-panel">
+      <div class="login-form-wrapper">
+        <div class="login-header">
+          <h2>Secure Access</h2>
+          <p>Enter your institutional credentials</p>
+        </div>
+
+        <div id="loginAlert" class="alert alert-danger">
+          <span>⚠️</span>
+          <span id="alertMessage">ACCESS DENIED — Unauthorized Credentials</span>
+        </div>
+
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" class="form-input" placeholder="Enter username" autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-input" placeholder="Enter password" autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn btn-primary">Authenticate</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const alertBox = document.getElementById('loginAlert');
+      const alertMsg = document.getElementById('alertMessage');
+
+      const result = login(username, password);
+      if (result.success) {
+        window.location.href = 'dashboard.html';
+      } else {
+        alertMsg.textContent = result.error;
+        alertBox.classList.add('show');
+        setTimeout(() => alertBox.classList.remove('show'), 5000);
+      }
+    });
+
+    // Check for timeout redirect
+    if (window.location.search.includes('timeout=1')) {
+      const alertBox = document.getElementById('loginAlert');
+      const alertMsg = document.getElementById('alertMessage');
+      alertMsg.textContent = 'SESSION EXPIRED — Please log in again';
+      alertBox.classList.add('show');
+    }
+  </script>
 </body>
 </html>
