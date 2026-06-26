@@ -1,0 +1,165 @@
+<!-- blockchain.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain — Premier Investor Vault</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="brand">
+                <div class="brand-icon"><i class="fas fa-shield-alt"></i></div>
+                <div>
+                    <div class="brand-text">Premier Vault</div>
+                    <div class="brand-sub">Private Wealth</div>
+                </div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-section-title">Main</div>
+                <a href="dashboard.html" class="nav-item"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+                <a href="vault.html" class="nav-item"><i class="fas fa-folder-open"></i><span>Deal Vault</span></a>
+                <a href="directory.html" class="nav-item"><i class="fas fa-users"></i><span>Investor Directory</span></a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Management</div>
+                <a href="ownership.html" class="nav-item"><i class="fas fa-pie-chart"></i><span>Ownership</span></a>
+                <a href="401k.html" class="nav-item"><i class="fas fa-piggy-bank"></i><span>401K Plans</span></a>
+                <a href="blockchain.html" class="nav-item active"><i class="fas fa-link"></i><span>Blockchain</span></a>
+                <a href="transactions.html" class="nav-item"><i class="fas fa-exchange-alt"></i><span>Transactions</span></a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Account</div>
+                <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i><span>Settings</span></a>
+                <a href="index.html" class="nav-item logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+            </div>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="vault-status">
+                <div class="status-indicator secure"><i class="fas fa-lock"></i></div>
+                <div class="status-text">
+                    <div class="status-label">Vault Secure</div>
+                    <div class="status-sublabel">AES-256 Encrypted</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    <main class="main-content">
+        <header class="top-header">
+            <button class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+            <div class="header-title">
+                <h1>Blockchain Ledger</h1>
+                <p class="header-subtitle">Immutable Transaction Records & Smart Contracts</p>
+            </div>
+            <div class="header-actions">
+                <div class="search-box"><i class="fas fa-search"></i><input type="text" placeholder="Search blocks..."></div>
+                <button class="btn-icon"><i class="fas fa-bell"></i><span class="badge">2</span></button>
+                <div class="user-profile">
+                    <div class="user-avatar">DW</div>
+                    <div class="user-info"><div class="user-name">Donte Westbrook</div><div class="user-role">Managing Partner</div></div>
+                </div>
+            </div>
+        </header>
+        <div class="content-wrapper">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="fas fa-cubes"></i></div>
+                    <div class="stat-info"><div class="stat-value">14,287</div><div class="stat-label">Blocks Mined</div></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-info"><div class="stat-value">99.98%</div><div class="stat-label">Network Uptime</div></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon gold"><i class="fas fa-file-contract"></i></div>
+                    <div class="stat-info"><div class="stat-value">23</div><div class="stat-label">Smart Contracts</div></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="fas fa-coins"></i></div>
+                    <div class="stat-info"><div class="stat-value">$47.3M</div><div class="stat-label">On-Chain Value</div></div>
+                </div>
+            </div>
+            <div class="section-header"><h2>Network Overview</h2><span class="live-indicator"><span class="pulse"></span>Live</span></div>
+            <div class="blockchain-visual">
+                <div class="chain-container" id="chainContainer">
+                    <div class="chain-block">
+                        <div class="block-header"><span class="block-num">#14,287</span><span class="block-time">2m ago</span></div>
+                        <div class="block-hash">0x7a3f...9e2d</div>
+                        <div class="block-txs">42 TXs</div>
+                        <div class="block-connector"><i class="fas fa-link"></i></div>
+                    </div>
+                    <div class="chain-block">
+                        <div class="block-header"><span class="block-num">#14,286</span><span class="block-time">5m ago</span></div>
+                        <div class="block-hash">0x8b2c...1f4a</div>
+                        <div class="block-txs">38 TXs</div>
+                        <div class="block-connector"><i class="fas fa-link"></i></div>
+                    </div>
+                    <div class="chain-block">
+                        <div class="block-header"><span class="block-num">#14,285</span><span class="block-time">8m ago</span></div>
+                        <div class="block-hash">0x9d1e...3b7c</div>
+                        <div class="block-txs">51 TXs</div>
+                        <div class="block-connector"><i class="fas fa-link"></i></div>
+                    </div>
+                    <div class="chain-block">
+                        <div class="block-header"><span class="block-num">#14,284</span><span class="block-time">11m ago</span></div>
+                        <div class="block-hash">0x4f5a...6d8e</div>
+                        <div class="block-txs">29 TXs</div>
+                        <div class="block-connector"><i class="fas fa-link"></i></div>
+                    </div>
+                    <div class="chain-block">
+                        <div class="block-header"><span class="block-num">#14,283</span><span class="block-time">14m ago</span></div>
+                        <div class="block-hash">0x2c7b...5a1f</div>
+                        <div class="block-txs">45 TXs</div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-header"><h2>Smart Contracts</h2><a href="#" class="view-all">Deploy New</a></div>
+            <div class="contract-grid">
+                <div class="contract-card">
+                    <div class="contract-header"><div class="contract-icon"><i class="fas fa-handshake"></i></div><div class="contract-status active">Active</div></div>
+                    <h3 class="contract-title">Investment Pool V3</h3>
+                    <p class="contract-desc">Primary capital pool smart contract governing the $175M investment allocation.</p>
+                    <div class="contract-meta"><span><i class="fas fa-ethereum"></i> 0x3a2f...8c1d</span><span><i class="fas fa-clock"></i> 45d uptime</span></div>
+                    <div class="contract-stats"><div><span class="stat-num">$175M</span><span class="stat-label">Locked</span></div><div><span class="stat-num">13</span><span class="stat-label">Investors</span></div><div><span class="stat-num">0.02%</span><span class="stat-label">Fee</span></div></div>
+                </div>
+                <div class="contract-card">
+                    <div class="contract-header"><div class="contract-icon"><i class="fas fa-exchange-alt"></i></div><div class="contract-status active">Active</div></div>
+                    <h3 class="contract-title">Distribution Logic</h3>
+                    <p class="contract-desc">Automated profit distribution and capital call execution across all stakeholders.</p>
+                    <div class="contract-meta"><span><i class="fas fa-ethereum"></i> 0x9e4b...2f7a</span><span><i class="fas fa-clock"></i> 45d uptime</span></div>
+                    <div class="contract-stats"><div><span class="stat-num">$2.1M</span><span class="stat-label">Distributed</span></div><div><span class="stat-num">8</span><span class="stat-label">Calls</span></div><div><span class="stat-num">Auto</span><span class="stat-label">Mode</span></div></div>
+                </div>
+                <div class="contract-card">
+                    <div class="contract-header"><div class="contract-icon"><i class="fas fa-user-shield"></i></div><div class="contract-status pending">Pending</div></div>
+                    <h3 class="contract-title">Granison Integration</h3>
+                    <p class="contract-desc">Pending smart contract amendment for Donte Granison's special integration terms.</p>
+                    <div class="contract-meta"><span><i class="fas fa-ethereum"></i> 0x1c5d...7e3b</span><span><i class="fas fa-clock"></i> Awaiting</span></div>
+                    <div class="contract-stats"><div><span class="stat-num">$0</span><span class="stat-label">Locked</span></div><div><span class="stat-num">1</span><span class="stat-label">Pending</span></div><div><span class="stat-num">Manual</span><span class="stat-label">Review</span></div></div>
+                </div>
+            </div>
+            <div class="section-header"><h2>Recent Transactions</h2><a href="transactions.html" class="view-all">View All</a></div>
+            <div class="activity-table-wrapper">
+                <table class="activity-table">
+                    <thead><tr><th>Tx Hash</th><th>From</th><th>To</th><th>Amount</th><th>Status</th></tr></thead>
+                    <tbody>
+                        <tr><td class="tx-hash">0x7a3f...9e2d</td><td><span class="address">0x3a2f...8c1d</span></td><td><span class="address">0x8b2c...1f4a</span></td><td class="amount">$125,000</td><td><span class="status-badge success"><i class="fas fa-check"></i> Confirmed</span></td></tr>
+                        <tr><td class="tx-hash">0x8b2c...1f4a</td><td><span class="address">0x9e4b...2f7a</span></td><td><span class="address">0x3a2f...8c1d</span></td><td class="amount">$2,450,000</td><td><span class="status-badge success"><i class="fas fa-check"></i> Confirmed</span></td></tr>
+                        <tr><td class="tx-hash">0x9d1e...3b7c</td><td><span class="address">0x2c7b...5a1f</span></td><td><span class="address">0x4f5a...6d8e</span></td><td class="amount">$890,000</td><td><span class="status-badge pending"><i class="fas fa-clock"></i> Pending</span></td></tr>
+                        <tr><td class="tx-hash">0x4f5a...6d8e</td><td><span class="address">0x3a2f...8c1d</span></td><td><span class="address">0x1c5d...7e3b</span></td><td class="amount">$500,000</td><td><span class="status-badge success"><i class="fas fa-check"></i> Confirmed</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/blockchain.js"></script>
+</body>
+</html>
