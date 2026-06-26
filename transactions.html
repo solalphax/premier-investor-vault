@@ -1,0 +1,219 @@
+<!-- transactions.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions — Premier Investor Vault</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="brand">
+                <div class="brand-icon"><i class="fas fa-shield-alt"></i></div>
+                <div>
+                    <div class="brand-text">Premier Vault</div>
+                    <div class="brand-sub">Private Wealth</div>
+                </div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-section-title">Main</div>
+                <a href="dashboard.html" class="nav-item"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+                <a href="vault.html" class="nav-item"><i class="fas fa-folder-open"></i><span>Deal Vault</span></a>
+                <a href="directory.html" class="nav-item"><i class="fas fa-users"></i><span>Investor Directory</span></a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Management</div>
+                <a href="ownership.html" class="nav-item"><i class="fas fa-pie-chart"></i><span>Ownership</span></a>
+                <a href="401k.html" class="nav-item"><i class="fas fa-piggy-bank"></i><span>401K Plans</span></a>
+                <a href="blockchain.html" class="nav-item"><i class="fas fa-link"></i><span>Blockchain</span></a>
+                <a href="transactions.html" class="nav-item active"><i class="fas fa-exchange-alt"></i><span>Transactions</span></a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Account</div>
+                <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i><span>Settings</span></a>
+                <a href="index.html" class="nav-item logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+            </div>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="vault-status">
+                <div class="status-indicator secure"><i class="fas fa-lock"></i></div>
+                <div class="status-text">
+                    <div class="status-label">Vault Secure</div>
+                    <div class="status-sublabel">AES-256 Encrypted</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    <main class="main-content">
+        <header class="top-header">
+            <button class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+            <div class="header-title">
+                <h1>Transaction History</h1>
+                <p class="header-subtitle">All Financial Movements & Capital Flows</p>
+            </div>
+            <div class="header-actions">
+                <div class="search-box"><i class="fas fa-search"></i><input type="text" placeholder="Search transactions..."></div>
+                <button class="btn btn-outline"><i class="fas fa-download"></i> Export</button>
+                <button class="btn-icon"><i class="fas fa-bell"></i><span class="badge">4</span></button>
+                <div class="user-profile">
+                    <div class="user-avatar">DW</div>
+                    <div class="user-info"><div class="user-name">Donte Westbrook</div><div class="user-role">Managing Partner</div></div>
+                </div>
+            </div>
+        </header>
+        <div class="content-wrapper">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="fas fa-arrow-down"></i></div>
+                    <div class="stat-info"><div class="stat-value">$42.8M</div><div class="stat-label">Total Inflows</div></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon red"><i class="fas fa-arrow-up"></i></div>
+                    <div class="stat-info"><div class="stat-value">$18.3M</div><div class="stat-label">Total Outflows</div></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="fas fa-wallet"></i></div>
+                    <div class="stat-info"><div class="stat-value">$24.5M</div><div class="stat-label">Net Position</div></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon gold"><i class="fas fa-receipt"></i></div>
+                    <div class="stat-info"><div class="stat-value">1,247</div><div class="stat-label">Total Transactions</div></div>
+                </div>
+            </div>
+            <div class="tx-filters">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="inflow">Inflows</button>
+                    <button class="filter-btn" data-filter="outflow">Outflows</button>
+                    <button class="filter-btn" data-filter="transfer">Transfers</button>
+                    <button class="filter-btn" data-filter="fee">Fees</button>
+                </div>
+                <div class="date-range">
+                    <input type="date" value="2026-06-01">
+                    <span>to</span>
+                    <input type="date" value="2026-06-26">
+                </div>
+            </div>
+            <div class="tx-summary-bar">
+                <div class="tx-summary-item"><span class="summary-label">This Month</span><span class="summary-value inflow">+$8.2M</span></div>
+                <div class="tx-summary-item"><span class="summary-label">Last Month</span><span class="summary-value inflow">+$12.5M</span></div>
+                <div class="tx-summary-item"><span class="summary-label">YTD</span><span class="summary-value inflow">+$42.8M</span></div>
+                <div class="tx-summary-item"><span class="summary-label">Avg Transaction</span><span class="summary-value">$34,320</span></div>
+            </div>
+            <div class="activity-table-wrapper tx-table">
+                <table class="activity-table">
+                    <thead><tr><th>Date</th><th>Description</th><th>Category</th><th>From/To</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead>
+                    <tbody>
+                        <tr data-type="inflow">
+                            <td><div class="tx-date"><span class="tx-day">25</span><span class="tx-month">Jun</span></div></td>
+                            <td><div class="tx-desc"><span class="tx-icon inflow"><i class="fas fa-arrow-down"></i></span><div><span class="tx-title">Capital Call — Tranche 1</span><span class="tx-sub">Investor contribution round</span></div></div></td>
+                            <td><span class="tx-category">Capital Call</span></td>
+                            <td><span class="tx-party">Multiple Investors</span></td>
+                            <td class="tx-amount inflow">+$43,750,000</td>
+                            <td><span class="status-badge success">Completed</span></td>
+                            <td><button class="btn-icon-sm"><i class="fas fa-eye"></i></button><button class="btn-icon-sm"><i class="fas fa-download"></i></button></td>
+                        </tr>
+                        <tr data-type="outflow">
+                            <td><div class="tx-date"><span class="tx-day">24</span><span class="tx-month">Jun</span></div></td>
+                            <td><div class="tx-desc"><span class="tx-icon outflow"><i class="fas fa-arrow-up"></i></span><div><span class="tx-title">Asset Acquisition — TechCorp</span><span class="tx-sub">Series B equity purchase</span></div></div></td>
+                            <td><span class="tx-category">Investment</span></td>
+                            <td><span class="tx-party">TechCorp Inc.</span></td>
+                            <td class="tx-amount outflow">-$12,500,000</td>
+                            <td><span class="status-badge success">Completed</span></td>
+                            <td><button class="btn-icon-sm"><i class="fas fa-eye"></i></button><button class="btn-icon-sm"><i class="fas fa-download"></i></button></td>
+                        </tr>
+                        <tr data-type="transfer">
+                            <td><div class="tx-date"><span class="tx-day">22</span><span class="tx-month">Jun</span></div></td>
+                            <td><div class="tx-desc"><span class="tx-icon transfer"><i class="fas fa-exchange-alt"></i></span><div><span class="tx-title">Inter-Fund Transfer</span><span class="tx-sub">Growth to income reallocation</span></div></div></td>
+                            <td><span class="tx-category">Transfer</span></td>
+                            <td><span class="tx-party">Growth Fund → Income Fund</span></td>
+                            <td class="tx-amount transfer">$5,000,000</td>
+                            <td><span class="status-badge success">Completed</span></td>
+                            <td><button class="btn-icon-sm"><i class="fas fa-eye"></i></button><button class="btn-icon-sm"><i class="fas fa-download"></i></button></td>
+                        </tr>
+                        <tr data-type="outflow">
+                            <td><div class="tx-date"><span class="tx-day">20</span><span class="tx-month">Jun</span></div></td>
+                            <td><div class="tx-desc"><span class="tx-icon outflow"><i class="fas fa-arrow-up"></i></span><div><span class="tx-title">Operating Expenses</span><span class="tx-sub">Q2 administrative costs</span></div></div></td>
+                            <td><span class="tx-category">Operating</span></td>
+                            <td><span class="tx-party">Various Vendors</span></td>
+                            <td class="tx-amount outflow">-$1,247,000</td>
+                            <td><span class="status-badge success">Completed</span></td>
+                            <td><button class="btn-icon-sm"><i class="fas fa-eye"></i></button><button class="btn-icon-sm"><i class="fas fa-download"></i></button></td>
+                        </tr>
+                        <tr data-type="fee">
+                            <td><div class="tx-date"><span class="tx-day">18</span><span class="tx-month">Jun</span></div></td>
+                            <td><div class="tx-desc"><span class="tx-icon fee"><i class="fas fa-percentage"></i></span><div><span class="tx-title">Management Fee</span><span class="tx-sub">Quarterly fund management</span></div></div></td>
+                            <td><span class="tx-category">Fee</span></td>
+                            <td><span class="tx-party">Premier Advisors LLC</span></td>
+                            <td class="tx-amount fee">-$875,000</td>
+                            <td><span class="status-badge success">Completed</span></td>
+                            <td><button class="btn-icon-sm"><i class="fas fa-eye"></i></button><button class="btn-icon-sm"><i class="fas fa-download"></i></button></td>
+                        </tr>
+                        <tr data-type="inflow">
+                            <td><div class="tx-date"><span class="tx-day">15</span><span class="tx-month">Jun</span></div></td>
+                            <td><div class="tx-desc"><span class="tx-icon inflow"><i class="fas fa-arrow-down"></i></span><div><span class="tx-title">Dividend Distribution</span><span class="tx-sub">TechCorp quarterly dividend</span></div></div></td>
+                            <td><span class="tx-category">Dividend</span></td>
+                            <td><span class="tx-party">TechCorp Inc.</span></td>
+                            <td class="tx-amount inflow">+$320,000</td>
+                            <td><span class="status-badge success">Completed</span></td>
+                            <td><button class="btn-icon-sm"><i class="fas fa-eye"></i></button><button class="btn-icon-sm"><i class="fas fa-download"></i></button></td>
+                        </tr>
+                        <tr data-type="transfer">
+                            <td><div class="tx-date"><span class="tx-day">12</span><span class="tx-month">Jun</span></div></td>
+                            <td><div class="tx-desc"><span class="tx-icon transfer"><i class="fas fa-exchange-alt"></i></span><div><span class="tx-title">401K Contribution</span><span class="tx-sub">Monthly employee deferrals</span></div></div></td>
+                            <td><span class="tx-category">401K</span></td>
+                            <td><span class="tx-party">Payroll → 401K Trust</span></td>
+                            <td class="tx-amount transfer">$185,000</td>
+                            <td><span class="status-badge success">Completed</span></td>
+                            <td><button class="btn-icon-sm"><i class="fas fa-eye"></i></button><button class="btn-icon-sm"><i class="fas fa-download"></i></button></td>
+                        </tr>
+                        <tr data-type="outflow">
+                            <td><div class="tx-date"><span class="tx-day">10</span><span class="tx-month">Jun</span></div></td>
+                            <td><div class="tx-desc"><span class="tx-icon outflow"><i class="fas fa-arrow-up"></i></span><div><span class="tx-title">Legal Services</span><span class="tx-sub">SEC filing and compliance</span></div></div></td>
+                            <td><span class="tx-category">Legal</span></td>
+                            <td><span class="tx-party">Kirkland & Ellis</span></td>
+                            <td class="tx-amount outflow">-$450,000</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td><button class="btn-icon-sm"><i class="fas fa-eye"></i></button><button class="btn-icon-sm"><i class="fas fa-download"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <span class="page-ellipsis">...</span>
+                <button class="page-btn">42</button>
+                <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/storage.js"></script>
+    <script>
+        document.querySelectorAll('.tx-filters .filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.tx-filters .filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.dataset.filter;
+                document.querySelectorAll('.tx-table tbody tr').forEach(row => {
+                    if (filter === 'all' || row.dataset.type === filter) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
