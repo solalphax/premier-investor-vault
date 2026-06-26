@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Premier Investor Vault</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <svg width="36" height="36" viewBox="0 0 56 56" fill="none">
+                    <rect x="4" y="4" width="48" height="48" rx="12" stroke="currentColor" stroke-width="2"/>
+                    <path d="M18 28h20M28 18v20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <span>PIV</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link active">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+                    Dashboard
+                </a>
+                <a href="investors.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Investor Directory
+                </a>
+                <a href="vault.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    Vault Account
+                </a>
+                <a href="ownership.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    Ownership Distribution
+                </a>
+                <a href="transactions.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    Transactions
+                </a>
+                <a href="blockchain.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="18" y1="10" x2="18" y2="14"/></svg>
+                    Blockchain Integration
+                </a>
+                <a href="401k.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    401K Investments
+                </a>
+                <a href="reports.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Reports
+                </a>
+                <a href="settings.html" class="nav-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    Settings
+                </a>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="#" id="logoutBtn" class="nav-link logout">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    Logout
+                </a>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <h1>Dashboard</h1>
+                    <p id="welcomeMsg">Welcome</p>
+                </div>
+                <div class="topbar-right">
+                    <div class="topbar-badge" id="donteAlert" style="display:none;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        Alert Pending
+                    </div>
+                    <div class="topbar-user">
+                        <div class="user-avatar" id="userAvatar">DG</div>
+                        <div class="user-info">
+                            <span class="user-name" id="userName">Investor</span>
+                            <span class="user-role" id="userRole">Member</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="page-content">
+                <div id="donteWarning" class="alert-banner" style="display:none;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <div>
+                        <strong>NOTICE:</strong> Your investor profile has not been successfully integrated into the Blockchain Grading System. Immediate action required.
+                    </div>
+                </div>
+                <div class="dashboard-grid">
+                    <div class="widget deal-status">
+                        <div class="widget-header">
+                            <h3>Deal Status</h3>
+                            <span class="status-badge active">Active</span>
+                        </div>
+                        <div class="widget-body">
+                            <div class="status-item">
+                                <span class="status-label">Deal Name</span>
+                                <span class="status-value">Confidential $175M Acquisition</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">Phase</span>
+                                <span class="status-value">Capital Deployment</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">Investors</span>
+                                <span class="status-value">13 Active</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">Last Updated</span>
+                                <span class="status-value" id="lastUpdated">--</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget vault-balance">
+                        <div class="widget-header">
+                            <h3>Vault Balance</h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        </div>
+                        <div class="widget-body">
+                            <div class="balance-amount">$175,000,000.00</div>
+                            <div class="balance-label">USD Reserve Account</div>
+                            <div class="balance-meta">
+                                <span>Secured</span>
+                                <span>FDIC Equivalent</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget notifications">
+                        <div class="widget-header">
+                            <h3>Notifications</h3>
+                            <span class="notif-count" id="notifCount">3</span>
+                        </div>
+                        <div class="widget-body">
+                            <div class="notif-item">
+                                <div class="notif-dot"></div>
+                                <div class="notif-text">Quarterly distribution scheduled for Q3 2026</div>
+                                <div class="notif-time">2h ago</div>
+                            </div>
+                            <div class="notif-item">
+                                <div class="notif-dot"></div>
+                                <div class="notif-text">Blockchain audit completed — All systems nominal</div>
+                                <div class="notif-time">5h ago</div>
+                            </div>
+                            <div class="notif-item">
+                                <div class="notif-dot"></div>
+                                <div class="notif-text">Capital reserve review pending board approval</div>
+                                <div class="notif-time">1d ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget investor-activity">
+                        <div class="widget-header">
+                            <h3>Investor Activity</h3>
+                        </div>
+                        <div class="widget-body">
+                            <div class="activity-list" id="activityList">
+                                <div class="activity-item">
+                                    <div class="activity-avatar">MB</div>
+                                    <div class="activity-info">
+                                        <span class="activity-name">Melissa Brooks</span>
+                                        <span class="activity-action">Reviewed vault statements</span>
+                                    </div>
+                                    <span class="activity-time">15m ago</span>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-avatar">CS</div>
+                                    <div class="activity-info">
+                                        <span class="activity-name">Carlos D. Stawarski</span>
+                                        <span class="activity-action">Approved transaction #TX-8842</span>
+                                    </div>
+                                    <span class="activity-time">42m ago</span>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-avatar">AS</div>
+                                    <div class="activity-info">
+                                        <span class="activity-name">Aubrey Stawarski</span>
+                                        <span class="activity-action">Updated blockchain credentials</span>
+                                    </div>
+                                    <span class="activity-time">1h ago</span>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-avatar">JM</div>
+                                    <div class="activity-info">
+                                        <span class="activity-name">Jonathan Mercer</span>
+                                        <span class="activity-action">Accessed ownership reports</span>
+                                    </div>
+                                    <span class="activity-time">2h ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget transaction-feed">
+                        <div class="widget-header">
+                            <h3>Transaction Feed</h3>
+                            <a href="transactions.html" class="widget-link">View All</a>
+                        </div>
+                        <div class="widget-body">
+                            <table class="feed-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Type</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="feedBody">
+                                    <tr>
+                                        <td>TX-8847</td>
+                                        <td>Capital Reserve</td>
+                                        <td>$12,500,000.00</td>
+                                        <td><span class="tx-status completed">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>TX-8846</td>
+                                        <td>Distribution</td>
+                                        <td>$3,200,000.00</td>
+                                        <td><span class="tx-status completed">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>TX-8845</td>
+                                        <td>Deposit</td>
+                                        <td>$25,000,000.00</td>
+                                        <td><span class="tx-status pending">Pending</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>TX-8844</td>
+                                        <td>Withdrawal</td>
+                                        <td>$1,800,000.00</td>
+                                        <td><span class="tx-status completed">Completed</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
