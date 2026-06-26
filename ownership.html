@@ -1,133 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ownership Distribution — Premier Investor Vault</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ownership — Premier Investor Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="app-layout">
-        <aside class="sidebar">
-            <div class="sidebar-brand">
-                <svg width="36" height="36" viewBox="0 0 56 56" fill="none">
-                    <rect x="4" y="4" width="48" height="48" rx="12" stroke="currentColor" stroke-width="2"/>
-                    <path d="M18 28h20M28 18v20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                </svg>
-                <span>PIV</span>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">PIV</div>
+        <div class="sidebar-brand">Premier <span>Vault</span></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title">Platform</div>
+          <a href="dashboard.html" class="nav-item"><span class="nav-icon">◈</span> Dashboard</a>
+          <a href="investors.html" class="nav-item"><span class="nav-icon">👥</span> Investors</a>
+          <a href="vault.html" class="nav-item"><span class="nav-icon">🏛</span> Vault</a>
+          <a href="ownership.html" class="nav-item active"><span class="nav-icon">◐</span> Ownership</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Systems</div>
+          <a href="blockchain.html" class="nav-item"><span class="nav-icon">🔗</span> Blockchain</a>
+          <a href="401k.html" class="nav-item"><span class="nav-icon">🛡</span> 401K</a>
+          <a href="transactions.html" class="nav-item"><span class="nav-icon">≡</span> Transactions</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar">--</div>
+          <div class="user-details">
+            <div class="user-name" id="userName">--</div>
+            <div class="user-role" id="userRole">--</div>
+          </div>
+          <button class="logout-btn" onclick="logout()" title="Logout">↪</button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+    <main class="main-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Ownership</h1>
+          <p class="page-subtitle">Equity distribution & partner stakes</p>
+        </div>
+        <div class="page-actions">
+          <button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
+          <button class="btn btn-sm btn-outline">Cap Table</button>
+        </div>
+      </div>
+
+      <div id="donteBanner" class="alert-banner alert-danger">
+        <span>⚠️</span>
+        <span>NOTICE: Your investor profile has not been successfully integrated into the Blockchain Grading System.</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
+        <div class="panel">
+          <div class="panel-header">
+            <h3 class="panel-title">Ownership Breakdown</h3>
+          </div>
+          <div class="panel-body">
+            <div class="chart-container">
+              <canvas id="ownershipChart"></canvas>
             </div>
-            <nav class="sidebar-nav">
-                <a href="dashboard.html" class="nav-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
-                    Dashboard
-                </a>
-                <a href="investors.html" class="nav-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    Investor Directory
-                </a>
-                <a href="vault.html" class="nav-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                    Vault Account
-                </a>
-                <a href="ownership.html" class="nav-link active">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    Ownership Distribution
-                </a>
-                <a href="transactions.html" class="nav-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                    Transactions
-                </a>
-                <a href="blockchain.html" class="nav-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="18" y1="10" x2="18" y2="14"/></svg>
-                    Blockchain Integration
-                </a>
-                <a href="401k.html" class="nav-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                    401K Investments
-                </a>
-                <a href="reports.html" class="nav-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                    Reports
-                </a>
-                <a href="settings.html" class="nav-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-                    Settings
-                </a>
-            </nav>
-            <div class="sidebar-bottom">
-                <a href="#" id="logoutBtn" class="nav-link logout">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-                    Logout
-                </a>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            <h3 class="panel-title">Key Metrics</h3>
+          </div>
+          <div class="panel-body">
+            <div class="card-grid" style="grid-template-columns:1fr 1fr;gap:1rem">
+              <div class="card">
+                <div class="card-label">Total Partners</div>
+                <div class="card-value">13</div>
+              </div>
+              <div class="card">
+                <div class="card-label">Managing Partners</div>
+                <div class="card-value">2</div>
+              </div>
+              <div class="card">
+                <div class="card-label">Avg. Ownership</div>
+                <div class="card-value">9.2%</div>
+              </div>
+              <div class="card">
+                <div class="card-label">Donte Fixed</div>
+                <div class="card-value" style="color:var(--accent-yellow)">6.0%</div>
+              </div>
             </div>
-        </aside>
-        <main class="main-content">
-            <header class="topbar">
-                <div class="topbar-left">
-                    <h1>Ownership Distribution</h1>
-                    <p>$175,000,000 Total Deal Value</p>
-                </div>
-                <div class="topbar-right">
-                    <div class="topbar-user">
-                        <div class="user-avatar" id="userAvatar">DG</div>
-                        <div class="user-info">
-                            <span class="user-name" id="userName">Investor</span>
-                            <span class="user-role" id="userRole">Member</span>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <div class="page-content">
-                <div class="ownership-summary">
-                    <div class="summary-card">
-                        <div class="summary-label">Total Deal Value</div>
-                        <div class="summary-value">$175,000,000.00</div>
-                    </div>
-                    <div class="summary-card">
-                        <div class="summary-label">Total Investors</div>
-                        <div class="summary-value">13</div>
-                    </div>
-                    <div class="summary-card">
-                        <div class="summary-label">Donte Granison</div>
-                        <div class="summary-value">6%</div>
-                        <div class="summary-sub">$10,500,000.00</div>
-                    </div>
-                </div>
-                <div class="ownership-charts">
-                    <div class="chart-card">
-                        <h3>Ownership Breakdown</h3>
-                        <div class="chart-container">
-                            <canvas id="ownershipChart" width="400" height="400"></canvas>
-                        </div>
-                        <div class="chart-legend" id="chartLegend"></div>
-                    </div>
-                    <div class="chart-card wide">
-                        <h3>Ownership by Value</h3>
-                        <div class="ownership-bars" id="ownershipBars"></div>
-                    </div>
-                </div>
-                <div class="ownership-table-section">
-                    <h3>Detailed Ownership Schedule</h3>
-                    <table class="data-table ownership-table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Investor</th>
-                                <th>Role</th>
-                                <th>Ownership %</th>
-                                <th>Value (USD)</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="ownershipTableBody"></tbody>
-                    </table>
-                </div>
-            </div>
-        </main>
-    </div>
-    <script src="js/storage.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/ownership.js"></script>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-grid" id="ownershipCards">
+        <!-- Populated by JS -->
+      </div>
+    </main>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/ownership.js"></script>
+  <script>initOwnership();</script>
 </body>
 </html>
